@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#dfb96e</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#FF6C02</color>
+    <color name="LightBrown">#dfb96e</color>
+    <color name="lightgray">#ededed</color>
+    <color name="Actionbar_color">#dfb96e</color>
+    <color name="background">#EEEDEF</color>
+
+    <color name="color1">#424549</color>
+    <color name="color2">#7e455e</color>
+    <color name="color3">#796e25</color>
+
+    <color name="colorGradientStart">#F8DE7E</color>
+    <color name="colorGradientCenter">#F8DE7E</color>
+    <color name="colorGradientEnd">#D99058</color>
+
+    <color name="msg_no_notes">#999</color>
+    <color name="hint_enter_note">#89c3c3c3</color>
+    <color name="timestamp">#858585</color>
+    <color name="note_list_text">#232323</color>
+    <color name="centre_button_color">#4285F4</color>
+</resources>

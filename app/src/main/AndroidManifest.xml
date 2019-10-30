@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.roubaisha.counter">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+
+    <application
+        android:name=".prayertime.AppController"
+        android:allowBackup="true"
+        android:excludeFromRecents="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".HijriCalendar"></activity>
+        <activity android:name=".Settings.SettingsActivity" />
+        <activity android:name=".FuzulActivity" />
+        <activity android:name=".DashboardActivity" />
+        <activity
+            android:name=".Names.MuhammadNamesActivity"
+            android:parentActivityName=".Names.NamesOptionActivity" />
+        <activity
+            android:name=".Names.NamesOptionActivity"
+            android:parentActivityName=".MoreActivity" />
+        <activity android:name=".Qibla.QiblaActivity" />
+        <activity android:name=".UserTasbih.ActPersonAdd" />
+        <activity android:name=".UserTasbih.ActPersonDetails" />
+        <activity android:name=".UserTasbih.ActPersonEdit" />
+        <activity android:name=".UserTasbih.UserTasbihDetailActivity" />
+        <activity android:name=".UserTasbih.UserTasbih" />
+        <activity android:name=".User_Tasbih_Activity" />
+        <activity android:name=".UserTasbihActivity" />
+        <activity
+            android:name=".TasbihOption"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".PendingPrayerLayerActivity"
+            android:parentActivityName=".PendingPrayersActivity" />
+        <activity
+            android:name=".PendingPrayersActivity"
+            android:parentActivityName=".MoreActivity" />
+        <activity android:name=".StopAzaan" />
+
+        <service
+            android:name=".Services.PrayerReminderService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".Services.TravelDetectionService"
+            android:enabled="true"
+            android:exported="true" />
+        <service android:name=".Services.SoundService" />
+
+        <receiver
+            android:name=".Services.RestartPrayerReminderService"
+            android:enabled="true"
+            android:exported="true"
+            android:label="RestartServiceWhenStopped"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="com.example.roubaisha.counter.RestartPrayerReminderService" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".Services.RestartTravelDetectionService"
+            android:enabled="true"
+            android:exported="true"
+            android:label="RestartServiceWhenStopped"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="com.example.roubaisha.counter.RestartTravelDetectionService" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".NotificationActionReceiver"
+            android:enabled="true" />
+
+        <activity android:name=".StopSound" />
+        <activity android:name=".YesResponse" />
+        <activity android:name=".NoResponse" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".Login_Signup.Login_MainActivity" />
+        <activity android:name=".Login_Signup.Login_form" />
+        <activity android:name=".Login_Signup.Signup_form" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCz4UCmnlDyHo_H_aOAF7yMrCuf0gNghdw" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".SplashScreenActivity"
+            android:theme="@style/AppTheme.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".CounterActivity" />
+        <activity
+            android:name=".TasbihActivity"
+            android:parentActivityName=".TasbihOption" />
+        <activity android:name=".MoreActivity" />
+        <activity
+            android:name=".GalleryActivity"
+            android:parentActivityName=".TasbihActivity" />
+        <activity
+            android:name=".CalendarActivity"
+            android:parentActivityName=".MoreActivity" />
+        <activity
+            android:name=".PrayerGuidance"
+            android:label="@string/title_activity_prayer_guidance"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Map.MapsActivity"
+            android:parentActivityName=".MoreActivity" />
+        <activity
+            android:name=".prayertime.PrayerTimeActivity"
+            android:parentActivityName=".MoreActivity" />
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".Names.AllahNamesActivity"
+            android:parentActivityName=".Names.NamesOptionActivity" />
+        <activity
+            android:name=".duaen.DuaActivity"
+            android:parentActivityName=".MoreActivity" />
+        <activity
+            android:name=".duaen.MusnoonActivity"
+            android:parentActivityName=".duaen.DuaActivity" />
+        <activity
+            android:name=".duaen.MorningActivity"
+            android:parentActivityName=".duaen.DuaActivity" />
+        <activity
+            android:name=".duaen.EveningActivity"
+            android:parentActivityName=".duaen.DuaActivity" />
+        <activity
+            android:name=".duaen.BeforesActivity"
+            android:parentActivityName=".duaen.BeforesActivity" />
+        <activity
+            android:name=".duaen.AfternActivity"
+            android:parentActivityName=".duaen.DuaActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity1"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity2"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity3"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity4"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity5"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity6"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity7"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity8"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity9"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity10"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity11"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity12"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity13"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity14"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity15"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity16"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity17"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity18"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity19"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity20"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity21"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity22"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity23"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity24"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity25"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity26"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity27"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity28"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity29"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity30"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity31"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity32"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity33"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity34"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity35"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity36"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity37"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity38"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity39"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity40"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity
+            android:name=".duaen.ListItemActivity41"
+            android:parentActivityName=".duaen.MusnoonActivity" />
+        <activity android:name=".activity.ScrollableTabsActivity" />
+        <activity
+            android:name=".activity.Fajarfard"
+            android:label="Fajr: 2 Rakaat Fard"
+            android:parentActivityName=".activity.ScrollableTabsActivity" />
+        <activity
+            android:name=".activity.Fajrsunnah"
+            android:label="Fajr: 2 Rakaat Sunnah"
+            android:parentActivityName=".activity.ScrollableTabsActivity" />
+        <activity
+            android:name=".activity.Zuharsunnah"
+            android:label="Duhr: 4 Rakaat Sunnah"
+            android:parentActivityName=".activity.ScrollableTabsActivity" />
+        <activity
+            android:name=".activity.Zuharfard"
+            android:label="Duhr: 4 Rakaat Fard"
+            android:parentActivityName=".activity.ScrollableTabsActivity" />
+        <activity
+            android:name=".activity.Zuhar_sunnah"
+            android:label="Duhr: 2 Rakaat Sunnah"
+            android:parentActivityName=".activity.ScrollableTabsActivity" />
+        <activity
+            android:name=".activity.Zuharnafil"
+            android:label="Duhr: 2 Rakaat Nafil"
+            android:parentActivityName=".activity.ScrollableTabsActivity" />
+        <activity
+            android:name=".activity.Maghribfard"
+            android:label="Maghrib: 3 Rakaat Fard"
+            android:parentActivityName=".activity.ScrollableTabsActivity" />
+        <activity
+            android:name=".activity.Maghribsunnah"
+            android:label="Maghrib: 2 Rakaat Sunnah"
+            android:parentActivityName=".activity.ScrollableTabsActivity" />
+        <activity
+            android:name=".activity.Maghribnafil"
+            android:label="Maghrib: 2 Rakaat Nafil"
+            android:parentActivityName=".activity.ScrollableTabsActivity" />
+        <activity
+            android:name=".activity.Asrfard"
+            android:label="Asr: 4 Rakaat Fard"
+            android:parentActivityName=".activity.ScrollableTabsActivity" />
+        <activity
+            android:name=".activity.Asrsunnah"
+            android:label="Asr: 4 Rakaat Sunnah"
+            android:parentActivityName=".activity.ScrollableTabsActivity" />
+        <activity
+            android:name=".activity.Ishasunnah"
+            android:label="Isha: 4 Rakaat Sunnah"
+            android:parentActivityName=".activity.ScrollableTabsActivity" />
+        <activity
+            android:name=".activity.Ishafard"
+            android:label="Isha: 4 Rakaat Sunnah"
+            android:parentActivityName=".activity.ScrollableTabsActivity" />
+        <activity
+            android:name=".activity.Isha_sunnah"
+            android:label="Isha: 2 Rakaat Sunnah"
+            android:parentActivityName=".activity.ScrollableTabsActivity" />
+        <activity
+            android:name=".activity.Ishanafil"
+            android:label="Isha: 2 Rakaat Nafil"
+            android:parentActivityName=".activity.ScrollableTabsActivity" />
+        <activity
+            android:name=".activity.Ishawitr"
+            android:label="Isha: 3 Rakaat Witr"
+            android:parentActivityName=".activity.ScrollableTabsActivity" />
+        <activity
+            android:name=".activity.Isha_nafil"
+            android:label="Isha: 2 Rakaat Nafil"
+            android:parentActivityName=".activity.ScrollableTabsActivity" />
+        <activity android:name=".mactivity.MScrollableTabsActivity" />
+        <activity android:name=".Settings.AppCompatPreferenceActivity" />
+    </application>
+
+</manifest>
