@@ -9,7 +9,7 @@
     android:padding="30dp"
     tools:context=".Login_Signup.Signup_form">
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"
@@ -23,8 +23,8 @@
             android:inputType="text"
             android:textSize="20sp"/>
 
-    </android.support.design.widget.TextInputLayout>
-    <android.support.design.widget.TextInputLayout
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"
@@ -39,8 +39,8 @@
             android:inputType="text"
             android:textSize="20sp"/>
 
-    </android.support.design.widget.TextInputLayout>
-    <android.support.design.widget.TextInputLayout
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"
@@ -55,8 +55,8 @@
             android:inputType="textPassword"
             android:textSize="20sp"/>
 
-    </android.support.design.widget.TextInputLayout>
-    <android.support.design.widget.TextInputLayout
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"
@@ -70,7 +70,7 @@
             android:inputType="textPassword"
             android:textSize="20sp"/>
 
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <RadioGroup
         android:layout_width="match_parent"

@@ -7,7 +7,7 @@
     android:orientation="horizontal"
     tools:context=".Names.NamesOptionActivity">
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/allah_name"
         android:layout_width="160dp"
         android:layout_height="190dp"
@@ -42,8 +42,8 @@
                 android:background="@color/lightgray" />
 
         </LinearLayout>
-    </android.support.v7.widget.CardView>
-    <android.support.v7.widget.CardView
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
         android:id="@+id/muhammad_name"
         android:layout_width="160dp"
         android:layout_height="190dp"
@@ -78,7 +78,7 @@
                 android:background="@color/lightgray" />
 
         </LinearLayout>
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
 
 </LinearLayout>

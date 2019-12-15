@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -42,7 +42,7 @@
                     android:gravity="center"
                     android:orientation="horizontal">
 
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/duaenbtn"
                         android:layout_width="160dp"
                         android:layout_height="190dp"
@@ -85,9 +85,9 @@
                                 android:textColor="@android:color/darker_gray" />
 
                         </LinearLayout>
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/tasbihbtn"
                         android:layout_width="160dp"
                         android:layout_height="190dp"
@@ -130,7 +130,7 @@
                                 android:textColor="@android:color/darker_gray" />
 
                         </LinearLayout>
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
 
@@ -142,7 +142,7 @@
                     android:gravity="center"
                     android:orientation="horizontal">
 
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/calendarbtn"
                         android:layout_width="160dp"
                         android:layout_height="190dp"
@@ -185,9 +185,9 @@
                                 android:textColor="@android:color/darker_gray" />
 
                         </LinearLayout>
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/nearestmosquebtn"
                         android:layout_width="160dp"
                         android:layout_height="190dp"
@@ -230,7 +230,7 @@
                                 android:textColor="@android:color/darker_gray" />
 
                         </LinearLayout>
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
 
@@ -241,7 +241,7 @@
                     android:gravity="center"
                     android:orientation="horizontal">
 
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/prayergbtn"
                         android:layout_width="160dp"
                         android:layout_height="190dp"
@@ -284,9 +284,9 @@
                                 android:textColor="@android:color/darker_gray" />
 
                         </LinearLayout>
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/prayertimebtn"
                         android:layout_width="160dp"
                         android:layout_height="190dp"
@@ -329,7 +329,7 @@
                                 android:textColor="@android:color/darker_gray" />
 
                         </LinearLayout>
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
 
@@ -341,7 +341,7 @@
                     android:gravity="center"
                     android:orientation="horizontal">
 
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/pendingprayerbtn"
                         android:layout_width="160dp"
                         android:layout_height="190dp"
@@ -384,9 +384,9 @@
                                 android:textColor="@android:color/darker_gray" />
 
                         </LinearLayout>
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/namesbtn"
                         android:layout_width="160dp"
                         android:layout_height="190dp"
@@ -429,11 +429,11 @@
                                 android:textColor="@android:color/darker_gray" />
 
                         </LinearLayout>
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
 
-                <android.support.v7.widget.CardView
+                <androidx.cardview.widget.CardView
                     android:id="@+id/qiblabtn"
                     android:layout_width="160dp"
                     android:layout_height="190dp"
@@ -476,7 +476,7 @@
                             android:textColor="@android:color/darker_gray" />
 
                     </LinearLayout>
-                </android.support.v7.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
 
             </LinearLayout>
@@ -488,7 +488,7 @@
             android:layout_height="50dp"
             android:layout_alignParentBottom="true">
 
-            <android.support.design.widget.BottomNavigationView
+            <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/bottomNavView_Bar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -496,11 +496,11 @@
                 android:background="#fff"
                 app:menu="@menu/bottom_navigation_menu">
 
-            </android.support.design.widget.BottomNavigationView>
+            </com.google.android.material.bottomnavigation.BottomNavigationView>
         </LinearLayout>
 
 
     </RelativeLayout>
 
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

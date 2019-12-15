@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.roubaisha.counter">
+    package="com.fyp.roubaisha.counter">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -12,7 +12,7 @@
     <uses-permission android:name="android.permission.REORDER_TASKS" />
 
     <application
-        android:name=".prayertime.AppController"
+        android:name="com.fyp.roubaisha.counter.prayertime.AppController"
         android:allowBackup="true"
         android:excludeFromRecents="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,47 +20,49 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HijriCalendar"></activity>
-        <activity android:name=".Settings.SettingsActivity" />
-        <activity android:name=".FuzulActivity" />
-        <activity android:name=".DashboardActivity" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3155249097775684~8391295993"/>
+        <activity android:name="com.fyp.roubaisha.counter.FuzulActivity"></activity>
+        <activity android:name="com.fyp.roubaisha.counter.DashboardActivity" ></activity>
         <activity
-            android:name=".Names.MuhammadNamesActivity"
-            android:parentActivityName=".Names.NamesOptionActivity" />
+            android:name="com.fyp.roubaisha.counter.Names.MuhammadNamesActivity"
+            android:parentActivityName="com.fyp.roubaisha.counter.Names.NamesOptionActivity" ></activity>
         <activity
-            android:name=".Names.NamesOptionActivity"
-            android:parentActivityName=".MoreActivity" />
-        <activity android:name=".Qibla.QiblaActivity" />
-        <activity android:name=".UserTasbih.ActPersonAdd" />
-        <activity android:name=".UserTasbih.ActPersonDetails" />
-        <activity android:name=".UserTasbih.ActPersonEdit" />
-        <activity android:name=".UserTasbih.UserTasbihDetailActivity" />
-        <activity android:name=".UserTasbih.UserTasbih" />
-        <activity android:name=".User_Tasbih_Activity" />
-        <activity android:name=".UserTasbihActivity" />
+            android:name="com.fyp.roubaisha.counter.Names.NamesOptionActivity"
+            android:parentActivityName="com.fyp.roubaisha.counter.MoreActivity" />
+        <activity android:name="com.fyp.roubaisha.counter.Qibla.QiblaActivity" />
+        <activity android:name="com.fyp.roubaisha.counter.UserTasbih.ActPersonAdd" />
+        <activity android:name="com.fyp.roubaisha.counter.UserTasbih.ActPersonDetails" />
+        <activity android:name="com.fyp.roubaisha.counter.UserTasbih.ActPersonEdit" />
+        <activity android:name="com.fyp.roubaisha.counter.UserTasbih.UserTasbihDetailActivity" />
+        <activity android:name="com.fyp.roubaisha.counter.UserTasbih.UserTasbih" />
+        <activity android:name="com.fyp.roubaisha.counter.User_Tasbih_Activity" />
+        <activity android:name="com.fyp.roubaisha.counter.UserTasbihActivity" />
         <activity
-            android:name=".TasbihOption"
-            android:parentActivityName=".HomeActivity" />
+            android:name="com.fyp.roubaisha.counter.TasbihOption"
+            android:parentActivityName="com.fyp.roubaisha.counter.HomeActivity" ></activity>
         <activity
-            android:name=".PendingPrayerLayerActivity"
-            android:parentActivityName=".PendingPrayersActivity" />
+            android:name="com.fyp.roubaisha.counter.PendingPrayerLayerActivity"
+            android:parentActivityName="com.fyp.roubaisha.counter.PendingPrayersActivity" />
         <activity
-            android:name=".PendingPrayersActivity"
-            android:parentActivityName=".MoreActivity" />
-        <activity android:name=".StopAzaan" />
+            android:name="com.fyp.roubaisha.counter.PendingPrayersActivity"
+            android:parentActivityName="com.fyp.roubaisha.counter.MoreActivity" />
+        <activity android:name="com.fyp.roubaisha.counter.StopAzaan" />
 
         <service
-            android:name=".Services.PrayerReminderService"
+            android:name="com.fyp.roubaisha.counter.Services.PrayerReminderService"
             android:enabled="true"
             android:exported="true" />
         <service
-            android:name=".Services.TravelDetectionService"
+            android:name="com.fyp.roubaisha.counter.Services.TravelDetectionService"
             android:enabled="true"
             android:exported="true" />
-        <service android:name=".Services.SoundService" />
+        <service android:name="com.fyp.roubaisha.counter.Services.SoundService" />
 
         <receiver
-            android:name=".Services.RestartPrayerReminderService"
+            android:name="com.fyp.roubaisha.counter.Services.RestartPrayerReminderService"
             android:enabled="true"
             android:exported="true"
             android:label="RestartServiceWhenStopped"
@@ -71,7 +73,7 @@
             </intent-filter>
         </receiver>
         <receiver
-            android:name=".Services.RestartTravelDetectionService"
+            android:name="com.fyp.roubaisha.counter.Services.RestartTravelDetectionService"
             android:enabled="true"
             android:exported="true"
             android:label="RestartServiceWhenStopped"
@@ -82,16 +84,16 @@
             </intent-filter>
         </receiver>
         <receiver
-            android:name=".NotificationActionReceiver"
+            android:name="com.fyp.roubaisha.counter.NotificationActionReceiver"
             android:enabled="true" />
 
-        <activity android:name=".StopSound" />
-        <activity android:name=".YesResponse" />
-        <activity android:name=".NoResponse" />
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".Login_Signup.Login_MainActivity" />
-        <activity android:name=".Login_Signup.Login_form" />
-        <activity android:name=".Login_Signup.Signup_form" />
+        <activity android:name="com.fyp.roubaisha.counter.StopSound" />
+        <activity android:name="com.fyp.roubaisha.counter.YesResponse" />
+        <activity android:name="com.fyp.roubaisha.counter.NoResponse" />
+        <activity android:name="com.fyp.roubaisha.counter.HomeActivity" />
+        <activity android:name="com.fyp.roubaisha.counter.Login_Signup.Login_MainActivity" />
+        <activity android:name="com.fyp.roubaisha.counter.Login_Signup.Login_form" />
+        <activity android:name="com.fyp.roubaisha.counter.Login_Signup.Signup_form" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -100,8 +102,7 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity
-            android:name=".SplashScreenActivity"
+        <activity android:name="com.fyp.roubaisha.counter.SplashScreenActivity"
             android:theme="@style/AppTheme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -109,244 +110,306 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CounterActivity" />
+        <activity android:name="com.fyp.roubaisha.counter.CounterActivity" />
+        <activity android:name="com.fyp.roubaisha.counter.TasbihActivity"
+            android:parentActivityName="com.fyp.roubaisha.counter.TasbihOption" />
+        <activity android:name="com.fyp.roubaisha.counter.MoreActivity" />
+        <activity android:name="com.fyp.roubaisha.counter.GalleryActivity"
+            android:parentActivityName="com.fyp.roubaisha.counter.TasbihActivity" />
         <activity
-            android:name=".TasbihActivity"
-            android:parentActivityName=".TasbihOption" />
-        <activity android:name=".MoreActivity" />
+            android:name="com.fyp.roubaisha.counter.CalendarActivity"
+            android:parentActivityName="com.fyp.roubaisha.counter.MoreActivity" />
         <activity
-            android:name=".GalleryActivity"
-            android:parentActivityName=".TasbihActivity" />
-        <activity
-            android:name=".CalendarActivity"
-            android:parentActivityName=".MoreActivity" />
-        <activity
-            android:name=".PrayerGuidance"
+            android:name="com.fyp.roubaisha.counter.PrayerGuidance"
             android:label="@string/title_activity_prayer_guidance"
-            android:parentActivityName=".HomeActivity"
+            android:parentActivityName="com.fyp.roubaisha.counter.HomeActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="com.fyp.roubaisha.counter.Map.MapsActivity"
+            android:parentActivityName="com.fyp.roubaisha.counter.MoreActivity" />
         <activity
-            android:name=".Map.MapsActivity"
-            android:parentActivityName=".MoreActivity" />
+            android:name="com.fyp.roubaisha.counter.prayertime.PrayerTimeActivity"
+            android:parentActivityName="com.fyp.roubaisha.counter.MoreActivity" />
+        <activity android:name="com.fyp.roubaisha.counter.MainActivity" />
         <activity
-            android:name=".prayertime.PrayerTimeActivity"
-            android:parentActivityName=".MoreActivity" />
-        <activity android:name=".MainActivity" />
+            android:name="com.fyp.roubaisha.counter.Names.AllahNamesActivity"
+            android:parentActivityName="com.fyp.roubaisha.counter.Names.NamesOptionActivity" />
+        <activity android:name="com.fyp.roubaisha.counter.duaen.DuaActivity"
+            android:parentActivityName="com.fyp.roubaisha.counter.MoreActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.MusnoonActivity"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.DuaActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.MorningActivity"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.DuaActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.EveningActivity"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.DuaActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.BeforesActivity"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.BeforesActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.AfternActivity"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.DuaActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity1"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity2"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity3"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity4"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity5"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity6"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity7"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity8"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity9"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity10"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity11"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity12"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity13"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity14"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity15"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity16"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity17"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity18"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity19"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity20"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity21"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity22"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity23"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity24"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity25"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity26"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity27"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity28"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity29"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity30"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity31"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity32"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity33"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity34"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity35"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity36"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity37"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity38"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity39"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity40"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+        <activity android:name="com.fyp.roubaisha.counter.duaen.ListItemActivity41"
+            android:parentActivityName="com.fyp.roubaisha.counter.duaen.MusnoonActivity"/>
+
+        <activity android:name="com.fyp.roubaisha.counter.activity.ScrollableTabsActivity"
+            android:label="Prayer Guidance"
+            android:parentActivityName="com.fyp.roubaisha.counter.MoreActivity">
+        </activity>
         <activity
-            android:name=".Names.AllahNamesActivity"
-            android:parentActivityName=".Names.NamesOptionActivity" />
-        <activity
-            android:name=".duaen.DuaActivity"
-            android:parentActivityName=".MoreActivity" />
-        <activity
-            android:name=".duaen.MusnoonActivity"
-            android:parentActivityName=".duaen.DuaActivity" />
-        <activity
-            android:name=".duaen.MorningActivity"
-            android:parentActivityName=".duaen.DuaActivity" />
-        <activity
-            android:name=".duaen.EveningActivity"
-            android:parentActivityName=".duaen.DuaActivity" />
-        <activity
-            android:name=".duaen.BeforesActivity"
-            android:parentActivityName=".duaen.BeforesActivity" />
-        <activity
-            android:name=".duaen.AfternActivity"
-            android:parentActivityName=".duaen.DuaActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity1"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity2"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity3"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity4"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity5"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity6"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity7"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity8"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity9"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity10"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity11"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity12"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity13"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity14"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity15"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity16"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity17"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity18"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity19"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity20"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity21"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity22"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity23"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity24"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity25"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity26"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity27"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity28"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity29"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity30"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity31"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity32"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity33"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity34"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity35"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity36"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity37"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity38"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity39"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity40"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity
-            android:name=".duaen.ListItemActivity41"
-            android:parentActivityName=".duaen.MusnoonActivity" />
-        <activity android:name=".activity.ScrollableTabsActivity" />
-        <activity
-            android:name=".activity.Fajarfard"
+            android:name="com.fyp.roubaisha.counter.activity.Fajarfard"
             android:label="Fajr: 2 Rakaat Fard"
-            android:parentActivityName=".activity.ScrollableTabsActivity" />
+            android:parentActivityName="com.fyp.roubaisha.counter.activity.ScrollableTabsActivity" >
+        </activity>
         <activity
-            android:name=".activity.Fajrsunnah"
+            android:name="com.fyp.roubaisha.counter.activity.Fajrsunnah"
             android:label="Fajr: 2 Rakaat Sunnah"
-            android:parentActivityName=".activity.ScrollableTabsActivity" />
+            android:parentActivityName="com.fyp.roubaisha.counter.activity.ScrollableTabsActivity" >
+        </activity>
         <activity
-            android:name=".activity.Zuharsunnah"
+            android:name="com.fyp.roubaisha.counter.activity.Zuharsunnah"
             android:label="Duhr: 4 Rakaat Sunnah"
-            android:parentActivityName=".activity.ScrollableTabsActivity" />
+            android:parentActivityName="com.fyp.roubaisha.counter.activity.ScrollableTabsActivity" >
+        </activity>
         <activity
-            android:name=".activity.Zuharfard"
+            android:name="com.fyp.roubaisha.counter.activity.Zuharfard"
             android:label="Duhr: 4 Rakaat Fard"
-            android:parentActivityName=".activity.ScrollableTabsActivity" />
+            android:parentActivityName="com.fyp.roubaisha.counter.activity.ScrollableTabsActivity" >
+        </activity>
         <activity
-            android:name=".activity.Zuhar_sunnah"
+            android:name="com.fyp.roubaisha.counter.activity.Zuhar_sunnah"
             android:label="Duhr: 2 Rakaat Sunnah"
-            android:parentActivityName=".activity.ScrollableTabsActivity" />
+            android:parentActivityName="com.fyp.roubaisha.counter.activity.ScrollableTabsActivity" >
+        </activity>
         <activity
-            android:name=".activity.Zuharnafil"
+            android:name="com.fyp.roubaisha.counter.activity.Zuharnafil"
             android:label="Duhr: 2 Rakaat Nafil"
-            android:parentActivityName=".activity.ScrollableTabsActivity" />
+            android:parentActivityName="com.fyp.roubaisha.counter.activity.ScrollableTabsActivity" >
+        </activity>
         <activity
-            android:name=".activity.Maghribfard"
+            android:name="com.fyp.roubaisha.counter.activity.Maghribfard"
             android:label="Maghrib: 3 Rakaat Fard"
-            android:parentActivityName=".activity.ScrollableTabsActivity" />
+            android:parentActivityName="com.fyp.roubaisha.counter.activity.ScrollableTabsActivity" >
+        </activity>
         <activity
-            android:name=".activity.Maghribsunnah"
+            android:name="com.fyp.roubaisha.counter.activity.Maghribsunnah"
             android:label="Maghrib: 2 Rakaat Sunnah"
-            android:parentActivityName=".activity.ScrollableTabsActivity" />
+            android:parentActivityName="com.fyp.roubaisha.counter.activity.ScrollableTabsActivity" >
+        </activity>
         <activity
-            android:name=".activity.Maghribnafil"
+            android:name="com.fyp.roubaisha.counter.activity.Maghribnafil"
             android:label="Maghrib: 2 Rakaat Nafil"
-            android:parentActivityName=".activity.ScrollableTabsActivity" />
+            android:parentActivityName="com.fyp.roubaisha.counter.activity.ScrollableTabsActivity" >
+        </activity>
         <activity
-            android:name=".activity.Asrfard"
+            android:name="com.fyp.roubaisha.counter.activity.Asrfard"
             android:label="Asr: 4 Rakaat Fard"
-            android:parentActivityName=".activity.ScrollableTabsActivity" />
+            android:parentActivityName="com.fyp.roubaisha.counter.activity.ScrollableTabsActivity" >
+        </activity>
         <activity
-            android:name=".activity.Asrsunnah"
+            android:name="com.fyp.roubaisha.counter.activity.Asrsunnah"
             android:label="Asr: 4 Rakaat Sunnah"
-            android:parentActivityName=".activity.ScrollableTabsActivity" />
+            android:parentActivityName="com.fyp.roubaisha.counter.activity.ScrollableTabsActivity" >
+        </activity>
         <activity
-            android:name=".activity.Ishasunnah"
+            android:name="com.fyp.roubaisha.counter.activity.Ishasunnah"
             android:label="Isha: 4 Rakaat Sunnah"
-            android:parentActivityName=".activity.ScrollableTabsActivity" />
+            android:parentActivityName="com.fyp.roubaisha.counter.activity.ScrollableTabsActivity" >
+        </activity>
         <activity
-            android:name=".activity.Ishafard"
+            android:name="com.fyp.roubaisha.counter.activity.Ishafard"
             android:label="Isha: 4 Rakaat Sunnah"
-            android:parentActivityName=".activity.ScrollableTabsActivity" />
+            android:parentActivityName="com.fyp.roubaisha.counter.activity.ScrollableTabsActivity" >
+        </activity>
         <activity
-            android:name=".activity.Isha_sunnah"
+            android:name="com.fyp.roubaisha.counter.activity.Isha_sunnah"
             android:label="Isha: 2 Rakaat Sunnah"
-            android:parentActivityName=".activity.ScrollableTabsActivity" />
+            android:parentActivityName="com.fyp.roubaisha.counter.activity.ScrollableTabsActivity" >
+        </activity>
         <activity
-            android:name=".activity.Ishanafil"
+            android:name="com.fyp.roubaisha.counter.activity.Ishanafil"
             android:label="Isha: 2 Rakaat Nafil"
-            android:parentActivityName=".activity.ScrollableTabsActivity" />
+            android:parentActivityName="com.fyp.roubaisha.counter.activity.ScrollableTabsActivity" >
+        </activity>
         <activity
-            android:name=".activity.Ishawitr"
+            android:name="com.fyp.roubaisha.counter.activity.Ishawitr"
             android:label="Isha: 3 Rakaat Witr"
-            android:parentActivityName=".activity.ScrollableTabsActivity" />
+            android:parentActivityName="com.fyp.roubaisha.counter.activity.ScrollableTabsActivity" >
+        </activity>
         <activity
-            android:name=".activity.Isha_nafil"
+            android:name="com.fyp.roubaisha.counter.activity.Isha_nafil"
             android:label="Isha: 2 Rakaat Nafil"
-            android:parentActivityName=".activity.ScrollableTabsActivity" />
-        <activity android:name=".mactivity.MScrollableTabsActivity" />
-        <activity android:name=".Settings.AppCompatPreferenceActivity" />
+            android:parentActivityName="com.fyp.roubaisha.counter.activity.ScrollableTabsActivity" >
+        </activity>
+
+        <activity android:name="com.fyp.roubaisha.counter.mactivity.MScrollableTabsActivity"
+            android:label="Prayer Guidance"
+            android:parentActivityName="com.fyp.roubaisha.counter.MoreActivity">
+        </activity>
+        <activity
+            android:name="com.fyp.roubaisha.counter.mactivity.MFajarfard"
+            android:label="Fajr: 2 Rakaat Fard"
+            android:parentActivityName="com.fyp.roubaisha.counter.mactivity.MScrollableTabsActivity" >
+        </activity>
+        <activity
+            android:name="com.fyp.roubaisha.counter.mactivity.MFajrsunnah"
+            android:label="Fajr: 2 Rakaat Sunnah"
+            android:parentActivityName="com.fyp.roubaisha.counter.mactivity.MScrollableTabsActivity" >
+        </activity>
+        <activity
+            android:name="com.fyp.roubaisha.counter.mactivity.MZuharsunnah"
+            android:label="Duhr: 4 Rakaat Sunnah"
+            android:parentActivityName="com.fyp.roubaisha.counter.mactivity.MScrollableTabsActivity" >
+        </activity>
+        <activity
+            android:name="com.fyp.roubaisha.counter.mactivity.MZuharfard"
+            android:label="Duhr: 4 Rakaat Fard"
+            android:parentActivityName="com.fyp.roubaisha.counter.mactivity.MScrollableTabsActivity" >
+        </activity>
+        <activity
+            android:name="com.fyp.roubaisha.counter.mactivity.MZuhar_sunnah"
+            android:label="Duhr: 2 Rakaat Sunnah"
+            android:parentActivityName="com.fyp.roubaisha.counter.mactivity.MScrollableTabsActivity" >
+        </activity>
+        <activity
+            android:name="com.fyp.roubaisha.counter.mactivity.MZuharnafil"
+            android:label="Duhr: 2 Rakaat Nafil"
+            android:parentActivityName="com.fyp.roubaisha.counter.mactivity.MScrollableTabsActivity" >
+        </activity>
+        <activity
+            android:name="com.fyp.roubaisha.counter.mactivity.MMaghribfard"
+            android:label="Maghrib: 3 Rakaat Fard"
+            android:parentActivityName="com.fyp.roubaisha.counter.mactivity.MScrollableTabsActivity"  >
+        </activity>
+        <activity
+            android:name="com.fyp.roubaisha.counter.mactivity.MMaghribsunnah"
+            android:label="Maghrib: 2 Rakaat Sunnah"
+            android:parentActivityName="com.fyp.roubaisha.counter.mactivity.MScrollableTabsActivity" >
+        </activity>
+        <activity
+            android:name="com.fyp.roubaisha.counter.mactivity.MMaghribnafil"
+            android:label="Maghrib: 2 Rakaat Nafil"
+            android:parentActivityName="com.fyp.roubaisha.counter.mactivity.MScrollableTabsActivity"  >
+        </activity>
+        <activity
+            android:name="com.fyp.roubaisha.counter.mactivity.MAsrfard"
+            android:label="Asr: 4 Rakaat Fard"
+            android:parentActivityName="com.fyp.roubaisha.counter.mactivity.MScrollableTabsActivity" >
+        </activity>
+        <activity
+            android:name="com.fyp.roubaisha.counter.mactivity.MAsrsunnah"
+            android:label="Asr: 4 Rakaat Sunnah"
+            android:parentActivityName="com.fyp.roubaisha.counter.mactivity.MScrollableTabsActivity" >
+        </activity>
+        <activity
+            android:name="com.fyp.roubaisha.counter.mactivity.MIshasunnah"
+            android:label="Isha: 4 Rakaat Sunnah"
+            android:parentActivityName="com.fyp.roubaisha.counter.mactivity.MScrollableTabsActivity" >
+        </activity>
+        <activity
+            android:name="com.fyp.roubaisha.counter.mactivity.MIshafard"
+            android:label="Isha: 4 Rakaat Sunnah"
+            android:parentActivityName="com.fyp.roubaisha.counter.mactivity.MScrollableTabsActivity" >
+        </activity>
+        <activity
+            android:name="com.fyp.roubaisha.counter.mactivity.MIsha_sunnah"
+            android:label="Isha: 2 Rakaat Sunnah"
+            android:parentActivityName="com.fyp.roubaisha.counter.mactivity.MScrollableTabsActivity" >
+        </activity>
+        <activity
+            android:name="com.fyp.roubaisha.counter.mactivity.MIshanafil"
+            android:label="Isha: 2 Rakaat Nafil"
+            android:parentActivityName="com.fyp.roubaisha.counter.mactivity.MScrollableTabsActivity" >
+        </activity>
+        <activity
+            android:name="com.fyp.roubaisha.counter.mactivity.MIshawitr"
+            android:label="Isha: 3 Rakaat Witr"
+            android:parentActivityName="com.fyp.roubaisha.counter.mactivity.MScrollableTabsActivity" >
+        </activity>
+        <activity
+            android:name="com.fyp.roubaisha.counter.mactivity.MIsha_nafil"
+            android:label="Isha: 2 Rakaat Nafil"
+            android:parentActivityName="com.fyp.roubaisha.counter.mactivity.MScrollableTabsActivity" >
+        </activity>
+        <activity android:name="com.fyp.roubaisha.counter.PrayerTimeYearActivity"
+    android:label="Prayer Timing Yearly"
+    android:parentActivityName="com.fyp.roubaisha.counter.prayertime.PrayerTimeActivity" />
     </application>
 
 </manifest>
