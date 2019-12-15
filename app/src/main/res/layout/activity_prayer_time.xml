@@ -17,6 +17,7 @@
             android:layout_height="wrap_content">
             <EditText
                 android:id="@+id/searchEt"
+                android:inputType="textCapWords"
                 android:hint="Search Location"
                 android:layout_weight="2"
                 android:layout_width="wrap_content"
@@ -30,7 +31,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingTop="30dp">
             <TextView
                 android:text="Location: "
                 android:layout_weight="1"
@@ -63,6 +65,8 @@
         </LinearLayout>
 
         <TextView
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
             android:text="Prayer Timings"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
@@ -71,16 +75,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <LinearLayout
+            android:paddingRight="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
                 android:text="Fajr: "
+                android:textSize="20sp"
                 android:layout_weight="1"
                 android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <TextView
                 android:text="Fajr: "
+                android:textSize="20sp"
                 android:id="@+id/fajrTv"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
@@ -92,12 +99,14 @@
             android:layout_height="wrap_content">
             <TextView
                 android:text="Zuhar: "
+                android:textSize="20sp"
                 android:layout_weight="1"
                 android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <TextView
                 android:text="Zuhar: "
+                android:textSize="20sp"
                 android:id="@+id/zuharTv"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
@@ -109,12 +118,14 @@
             android:layout_height="wrap_content">
             <TextView
                 android:text="Asr: "
+                android:textSize="20sp"
                 android:layout_weight="1"
                 android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <TextView
                 android:text="Asr: "
+                android:textSize="20sp"
                 android:id="@+id/asrTv"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
@@ -126,12 +137,14 @@
             android:layout_height="wrap_content">
             <TextView
                 android:text="Maghrib: "
+                android:textSize="20sp"
                 android:layout_weight="1"
                 android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <TextView
                 android:text="Maghrib: "
+                android:textSize="20sp"
                 android:id="@+id/maghribTv"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
@@ -143,12 +156,14 @@
             android:layout_height="wrap_content">
             <TextView
                 android:text="Isha: "
+                android:textSize="20sp"
                 android:layout_weight="1"
                 android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <TextView
                 android:text="Isha: "
+                android:textSize="20sp"
                 android:id="@+id/ishaTv"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
