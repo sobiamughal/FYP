@@ -21,6 +21,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+<activity
+            android:name=".Quran.presentation.listsurah.ListSurahActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Quran.presentation.splashscreen.SplashscreenActivityQ"
+            tools:ignore="InnerclassSeparator">
+        </activity>
+        <activity android:name=".Quran.presentation.listayat.ListAyatActivity"></activity>
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-3155249097775684~8391295993"/>
