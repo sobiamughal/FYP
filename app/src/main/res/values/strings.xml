@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Daar-ul-Jannah</string>
     <string name="title_activity_prayer_guidance">PrayerGuidance</string>
     <string name="tab_text_1">Fajr</string>
@@ -9,50 +9,146 @@
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
 
-    <!--Prayer Guidance Fajr Activity Button Name -->
-    <!--Fajr-->
+
+    <string name="app_description">Hope for Allah forgiveness</string>
+
+    <string name="enable_reminder">Enable reminder</string>
+
+    <string name="btn_settings">Settings</string>
+
+    <string name="lang_arabic" translatable="false">العربيه</string>
+    <string name="lang_english" translatable="false">English</string>
+
+    <string name="pref_title_language">Language</string>
+    <string name="pref_title_choose_language">Choose language</string>
+
+    <string name="pref_cat_fasting_days">Choose fasting days to remind</string>
+    <string name="pref_sum_fasting_notified">You will be notified to fast this day in sha\' allah</string>
+    <string name="pref_sum_fasting_white_notified">You will be notified to fast those days in sha\' allah</string>
+    <string name="pref_sum_fasting_ashura_notified">@string/pref_sum_fasting_white_notified</string>
+    <string name="pref_key_lang_dialog" translatable="false">language</string>
+
+    <string name="pref_title_fasting_monday">Monday</string>
+    <string name="pref_key_fasting_monday" translatable="false">day_monday</string>
+
+    <string name="pref_title_fasting_thursday">Thursday</string>
+    <string name="pref_key_fasting_thursday" translatable="false">day_thursday</string>
+
+    <string name="pref_title_fasting_white_days">White days</string>
+    <string name="pref_sum_fasting_days_num" translatable="false">(13 – 14 – 15)</string>
+    <string name="pref_key_fasting_white_days" translatable="false">white_days</string>
+
+    <string name="pref_title_fasting_ashura">Ashura day</string>
+    <string name="pref_sum_fasting_ashura_num">(9 – 10) Muharram</string>
+    <string name="pref_key_fasting_ashura" translatable="false">day_ashura</string>
+
+    <string name="pref_title_tips">Useful tips!</string>
+
+    <string name="do_not_forget">Don\'t forget to fast tomorrow in sha\' allah</string>
+
+    <string name="fast_monday">Monday fasting</string>
+    <string name="fast_thursday">Thursday fasting</string>
+    <string name="fast_whites">White days fasting (day %1$s)</string>
+    <string name="fast_ashura">Ashura fasting (day %1$s)</string>
+
+    <!-- Arrays -->
+    <string-array name="language">
+        <item>@string/lang_arabic</item>
+        <item>@string/lang_english</item>
+    </string-array>
+
+    <string-array name="language_values" tools:ignore="MissingTranslation">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+    <string name="hijri_date_picker_done" translatable="false">Done</string>
+    <string name="hijri_date_picker_cancel" translatable="false">Cancel</string>
+    <string name="hijri_date_picker_year" translatable="false">Year</string>
+    <string name="January" translatable="false">January</string>
+    <string name="February" translatable="false">February</string>
+    <string name="March" translatable="false">March</string>
+    <string name="April" translatable="false">April</string>
+    <string name="May" translatable="false">May</string>
+    <string name="June" translatable="false">June</string>
+    <string name="July" translatable="false">July</string>
+    <string name="August" translatable="false">August</string>
+    <string name="September" translatable="false">September</string>
+    <string name="October" translatable="false">October</string>
+    <string name="November" translatable="false">November</string>
+    <string name="December" translatable="false">December</string>
+
+    <string name="hijri_date_picker_cancel_arabic" translatable="false">الغاء</string>
+
+
+    <string name="dhu_alhijjah" translatable="false">ذو الحجة</string>
+    <string name="hijri_date_picker_done_arabic" translatable="false">موافق</string>
+    <string name="dhu_alqadah" translatable="false">ذو القعدة</string>
+    <string name="jamada_i" translatable="false">جماد الاول</string>
+    <string name="jamada_ii" translatable="false">جماد الثاني</string>
+    <string name="muharram" translatable="false">محرم</string>
+    <string name="rabi_i" translatable="false">ربيع الاول</string>
+    <string name="rabi_ii" translatable="false">ربيع الثاني</string>
+    <string name="rajab" translatable="false">رجب</string>
+    <string name="ramadan" translatable="false">رمضان</string>
+    <string name="safar" translatable="false">صفر</string>
+    <string name="shaban" translatable="false">شعبان</string>
+    <string name="shawal" translatable="false">شوال</string>
+    <string name="hijri_date_picker_year_arabic" translatable="false">السنة</string>
+    <string name="date_time_header">Date and Time</string>
+    <string name="search" translatable="false">Search&#8230;</string>
+
+    <!--<string name="calendar_confirm">Confirm</string>-->
+    <string name="time_text">TIME</string>
+
+    <string name="calendar_confirm">DONE</string>
+
+    <string name="header_calendar">Calendar</string>
+    <string name="calendar_cancel">Cancel</string>
     <string name="pgfajrbtn1">2 Rakkat Sunnah \n Empahasized or Mu-akkdah</string>
     <string name="pgfajrbtn2">2 Rakkat Fard \n Mandatory</string>
-    <!--Zuhar-->
+    <!--Prayer Guidance Fajr Activity Button Name -->
+    <!--Fajr-->
     <string name="pgzuharbtn1">4 Rakkat Sunnah \n Empahasized or Mu-akkdah</string>
     <string name="pgzuharbtn2">4 Rakkat Fard \n Mandatory</string>
+    <!--Zuhar-->
     <string name="pgzuharbtn3">2 Rakkat Sunnah \n Empahasized or Mu-akkdah</string>
     <string name="pgzuharbtn4">2 Rakkat Nafil \n Mustahab</string>
-    <!--Asr-->
     <string name="pgasrbtn1">4 Rakkat Fard \n Mandatory</string>
-    <!--Maghrib-->
     <string name="pgmaghribbtn1">3 Rakkat Fard \n Mandatory</string>
+    <!--Asr-->
     <string name="pgmaghribbtn2">2 Rakkat Sunnah \n Empahasized or Mu-akkdah</string>
+    <!--Maghrib-->
     <string name="pgmaghribbtn3">2 Rakkat Nafil \n Mustahab</string>
-    <!--Isha-->
     <string name="pgishabtn1">4 Rakkat Sunnah \n Empahasized or Mu-akkdah</string>
     <string name="pgishabtn2">4 Rakkat Fard \n Mandatory</string>
+    <!--Isha-->
     <string name="pgishabtn3">2 Rakkat Sunnah \n Empahasized or Mu-akkdah</string>
     <string name="pgishabtn4">2 Rakkat Nafil \n Mustahab</string>
     <string name="pgishabtn5">3 Rakkat Witr \n Wajib</string>
     <string name="pgishabtn6">2 Rakkat Nafil \n Mustahab</string>
+    <string name="google_maps_API_key">AIzaSyCz4UCmnlDyHo_H_aOAF7yMrCuf0gNghdw</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
     <!--Google Maps Working-->
-    <string name="google_maps_API_key">AIzaSyCz4UCmnlDyHo_H_aOAF7yMrCuf0gNghdw</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_demo">DemoActivity</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="activity_title_home">Notes</string>
     <string name="msg_no_notes">No tasbihs found!</string>
+
     <string name="lbl_new_note_title">Add New Tasbih</string>
     <string name="lbl_edit_note_title">Edit Tasbih</string>
     <string name="hint_enter_note">Enter your Tasbih</string>
-
     <string name="title_activity_settings">Settings</string>
-
     <string name="pref_title_ringtone">Ringtone</string>
+
     <string name="pref_ringtone_silent">Silent</string>
 
     <string name="default_gallery_storage">My Videos</string>
     <string name="title_muslimah">Muslimah</string>
+
     <string name="summary_upload_over_wifi">Upload the videos when wifi is available</string>
     <string name="title_upload_quality">Upload Quality</string>
     <string name="summary_upload_video_quality">Specify video quality for uploads</string>
@@ -83,13 +179,12 @@
     <string name="key_notifications_new_message_ringtone">key_notifications_new_message_ringtone</string>
     <string name="key_vibrate">key_vibrate</string>
     <string name="key_send_feedback">key_send_feedback</string>
+    <string name="pref_header_general">General</string>
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
 
     <!-- Strings related to Settings -->
 
     <!-- Example General settings -->
-    <string name="pref_header_general">General</string>
-
-    <string name="pref_title_social_recommendations">Enable social recommendations</string>
     <string name="pref_description_social_recommendations">Recommendations for people to contact
         based on your message history
     </string>
@@ -98,6 +193,48 @@
     <string name="pref_default_display_name">John Smith</string>
 
     <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+    <string name="pref_header_notifications">Notifications</string>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="action_settings_headers">Settings with Headers</string>
+    <string name="title_activity_second">SecondActivity</string>
+
+    <string name="muslim">Muslim</string>
+
+    <string name="muslimah">Muslimah</string>
+
+    <string name="key_muslim">key_muslim</string>
+
+    <string name="title_muslim">Muslim</string>
+
+    <!-- Example settings for Notifications -->
+    <string-array name="hijri_date_picker_days">
+        <item>SUN</item>
+        <item>MON</item>
+        <item>TUE</item>
+        <item>WED</item>
+        <item>THU</item>
+        <item>FRI</item>
+        <item>SAT</item>
+    </string-array>
+
+    <string-array name="hijri_date_picker_days_arabic">
+        <item>الاحد</item>
+        <item>الاثنين</item>
+        <item>الثلاثاء</item>
+        <item>الاربعاء</item>
+        <item>الخميس</item>
+        <item>الجمعة</item>
+        <item>السبت</item>
+    </string-array>
+
     <string-array name="pref_example_list_titles">
         <item>Always</item>
         <item>When possible</item>
@@ -108,11 +245,6 @@
         <item>0</item>
         <item>-1</item>
     </string-array>
-
-    <!-- Example settings for Data & Sync -->
-    <string name="pref_header_data_sync">Data &amp; sync</string>
-
-    <string name="pref_title_sync_frequency">Sync frequency</string>
     <string-array name="pref_sync_frequency_titles">
         <item>15 minutes</item>
         <item>30 minutes</item>
@@ -129,33 +261,15 @@
         <item>360</item>
         <item>-1</item>
     </string-array>
-
     <string-array name="list_preference_entries">
         <item>Entry 1</item>
         <item>Entry 2</item>
         <item>Entry 3</item>
     </string-array>
-
     <string-array name="list_preference_entry_values">
         <item>1</item>
         <item>2</item>
         <item>3</item>
     </string-array>
-
     <string-array name="multi_select_list_preference_default_value" />
-
-    <string name="pref_title_system_sync_settings">System sync settings</string>
-
-    <!-- Example settings for Notifications -->
-    <string name="pref_header_notifications">Notifications</string>
-
-    <string name="pref_title_new_message_notifications">New message notifications</string>
-
-    <string name="pref_title_vibrate">Vibrate</string>
-    <string name="action_settings_headers">Settings with Headers</string>
-    <string name="title_activity_second">SecondActivity</string>
-    <string name="muslim">Muslim</string>
-    <string name="muslimah">Muslimah</string>
-    <string name="key_muslim">key_muslim</string>
-    <string name="title_muslim">Muslim</string>
 </resources>

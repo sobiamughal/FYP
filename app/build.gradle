@@ -12,6 +12,8 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         vectorDrawables.useSupportLibrary = true
+	
+	multiDexEnabled true
 
     }
     compileOptions {
@@ -27,6 +29,7 @@ android {
     buildTypes {
         release {
             minifyEnabled true
+	    shrinkResources true
             useProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt')
             multiDexEnabled true
@@ -95,8 +98,8 @@ dependencies {
     implementation 'androidx.preference:preference:1.1.0'
 
     //calendarlibrary
-//    implementation project(':calendarlibrary')
-    implementation 'com.google.android.gms:play-services-ads:18.3.0'
+//    implementation project(':calendarlibraryy')
+//    implementation 'com.google.android.gms:play-services-ads:18.3.0'
 
     //for quran
     implementation 'com.google.android.material:material:1.0.0'
@@ -104,4 +107,6 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
     implementation 'com.jakewharton:butterknife:10.2.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
+
+    implementation 'com.miguelcatalan:materialsearchview:1.4.0'
 }

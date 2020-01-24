@@ -7,10 +7,12 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -22,6 +24,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.fyp.roubaisha.counter.MyCalendarView;
 import com.fyp.roubaisha.counter.PrayerTimeYearActivity;
 import com.fyp.roubaisha.counter.R;
 
@@ -50,31 +53,31 @@ public class PrayerTimeActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Prayer Time");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        mFajrTv     = (TextView) findViewById(R.id.fajrTv);
-        mZuharTv    = (TextView) findViewById(R.id.zuharTv);
-        mAsrTv      = (TextView) findViewById(R.id.asrTv);
-        mMaghribTv  = (TextView) findViewById(R.id.maghribTv);
-        mIshaTv     = (TextView) findViewById(R.id.ishaTv);
-        mLocationTv = (TextView) findViewById(R.id.locationTv);
-        mDateTv     = (TextView) findViewById(R.id.dateTv);
-        mSearchEt   = (EditText) findViewById(R.id.searchEt);
-        mSearchBtn  = (Button)   findViewById(R.id.searchBtn);
+        mFajrTv     = findViewById(R.id.fajrTv);
+        mZuharTv    = findViewById(R.id.zuharTv);
+        mAsrTv      = findViewById(R.id.asrTv);
+        mMaghribTv  = findViewById(R.id.maghribTv);
+        mIshaTv     = findViewById(R.id.ishaTv);
+        mLocationTv = findViewById(R.id.locationTv);
+        mDateTv     = findViewById(R.id.dateTv);
+//        mSearchEt   = (EditText) findViewById(R.id.searchEt);
+//        mSearchBtn  = (Button)   findViewById(R.id.searchBtn);
 
 
-        mSearchBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //get text from editText
-                String mLocation = mSearchEt.getText().toString().trim();
-                //validate if it is null or not
-                if (mLocation.isEmpty()){
-                    Toast.makeText(PrayerTimeActivity.this, "Please enter location", Toast.LENGTH_SHORT).show();
-                }else{
-                    url = "http://muslimsalat.com/"+mLocation+".json?key=b2d880ae06d9e5a5cc7088d1ae0b0158";
-                    searchLocation();
-                }
-            }
-        });
+//        mSearchBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //get text from editText
+//                String mLocation = mSearchEt.getText().toString().trim();
+//                //validate if it is null or not
+//                if (mLocation.isEmpty()){
+//                    Toast.makeText(PrayerTimeActivity.this, "Please enter location", Toast.LENGTH_SHORT).show();
+//                }else{
+//                    url = "http://muslimsalat.com/"+mLocation+".json?key=b2d880ae06d9e5a5cc7088d1ae0b0158";
+//                    searchLocation();
+//                }
+//            }
+//        });
 
         url = "http://muslimsalat.com/karachi.json?key=b2d880ae06d9e5a5cc7088d1ae0b0158";
         searchLocation();
@@ -136,7 +139,7 @@ public class PrayerTimeActivity extends AppCompatActivity {
                     }
                     if (activeNetwork != null && activeNetwork.isConnectedOrConnecting()){
                         Toast.makeText(PrayerTimeActivity.this, "Server is not connected", Toast.LENGTH_SHORT).show();
-                        
+                       
                     }else {
                         Toast.makeText(PrayerTimeActivity.this, "your device is not connected to internet. ", Toast.LENGTH_SHORT).show();
                     }
@@ -158,6 +161,33 @@ public class PrayerTimeActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_calendar,menu);
+        MenuItem menuItem = menu.findItem(R.id.searchbtn);
+        SearchView searchView = (SearchView) menuItem.getActionView();
+        searchView.setQueryHint("Search by City");
+//        int id = searchView.getContext()
+//                .getResources()
+//                .getIdentifier("android:id/search_src_text", null, null);
+//        EditText editText = (EditText) searchView.findViewById(id);
+//        String mLocation = searchView.getQuery().toString().trim();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                if (query.isEmpty()){
+
+                }else {
+                    url = "http://muslimsalat.com/"+query+".json?key=b2d880ae06d9e5a5cc7088d1ae0b0158";
+                    searchLocation();
+                }
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                url = "http://muslimsalat.com/"+s+".json?key=b2d880ae06d9e5a5cc7088d1ae0b0158";
+                searchLocation();
+                return false;
+            }
+        });
         return true;
     }
 
@@ -167,8 +197,9 @@ public class PrayerTimeActivity extends AppCompatActivity {
         if(id==R.id.action_pcalendar){
             Intent intent = new Intent(PrayerTimeActivity.this, PrayerTimeYearActivity.class);
             startActivity(intent);
+        }else if(id==R.id.searchbtn){
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
-
 }

@@ -33,12 +33,12 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
                 boolean isOn = (boolean) newValue;
                 SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
                 if (isOn) {
-                    editor.putBoolean("btn",isOn);
+                    editor.putBoolean("switch",isOn);
                     editor.apply();
                     Toast.makeText(SettingsActivity.this, "Switch is ON", Toast.LENGTH_SHORT).show();
 
                 } else {
-                    editor.putBoolean("btn",isOn);
+                    editor.putBoolean("switch",isOn);
                     editor.apply();
                     Log.d("0099","btn " + editor.toString() + " " + isOn);
                     Toast.makeText(SettingsActivity.this, "Switch is OFF", Toast.LENGTH_SHORT).show();

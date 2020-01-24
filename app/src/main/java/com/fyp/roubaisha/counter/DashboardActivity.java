@@ -8,9 +8,15 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.multidex.MultiDex;
+import androidx.preference.PreferenceManager;
+import androidx.preference.SwitchPreference;
 
 import android.os.Bundle;
 
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -18,32 +24,29 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
-
 import com.fyp.roubaisha.counter.Helper.DatabaseHelper;
 import com.fyp.roubaisha.counter.Helper.PrayerAPIHelper;
 import com.fyp.roubaisha.counter.Map.MapsActivity;
 import com.fyp.roubaisha.counter.Names.NamesOptionActivity;
 import com.fyp.roubaisha.counter.Qibla.QiblaActivity;
-import com.fyp.roubaisha.counter.Quran.presentation.splashscreen.SplashscreenActivityQ;
 import com.fyp.roubaisha.counter.Services.PrayerReminderService;
 import com.fyp.roubaisha.counter.Services.RestartPrayerReminderService;
 import com.fyp.roubaisha.counter.Services.RestartTravelDetectionService;
 import com.fyp.roubaisha.counter.Services.TravelDetectionService;
+import com.fyp.roubaisha.counter.Settings.SettingsActivity;
 import com.fyp.roubaisha.counter.activity.ScrollableTabsActivity;
 import com.fyp.roubaisha.counter.duaen.DuaActivity;
 import com.fyp.roubaisha.counter.mactivity.MScrollableTabsActivity;
 import com.fyp.roubaisha.counter.prayertime.PrayerTimeActivity;
-import com.google.android.gms.ads.AdSize;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.luseen.spacenavigation.SpaceItem;
 import com.luseen.spacenavigation.SpaceNavigationView;
 import com.luseen.spacenavigation.SpaceOnClickListener;
 
 
- public class DashboardActivity extends AppCompatActivity {
+public class DashboardActivity extends AppCompatActivity {
+
+    public static final String MY_PREFS_NAME = "MyPrefs" ;
+
     DatabaseHelper objDBHelper;
     private static final long START_TIME_IN_MILLIS = 1800000;
 
@@ -61,30 +64,23 @@ import com.luseen.spacenavigation.SpaceOnClickListener;
     private SharedPreferences sharedPref;
     public Intent intent;
     Context ctx = DashboardActivity.this;
-    //SettingsActivity st = new SettingsActivity();
-//    DashboardActivity(){
-//    }
-//    DashboardActivity(Context ctx){
-//        this.ctx = ctx;
-//    }
 
     SpaceNavigationView spaceNavigationView;
+
+    SharedPreferences sharedPreferences;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+
+
+
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+
         //app ka size ziada ho gaya tha to islia ya wali line..
 //        MultiDex.install(this);
-
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
-        AdView adView = new AdView(this);
-        adView.setAdSize(AdSize.BANNER);
-        adView.setAdUnitId("ca-app-pub-3155249097775684~8391295993");
+        MultiDex.install(this);
 
         spaceNavigationView = findViewById(R.id.space);
 
@@ -98,7 +94,8 @@ import com.luseen.spacenavigation.SpaceOnClickListener;
             @Override
             public void onCentreButtonClick() {
                 Toast.makeText(DashboardActivity.this,"Coming Soon", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(DashboardActivity.this, SplashscreenActivityQ.class);
+                Intent intent = new Intent(DashboardActivity.this, CalendarActivity.class);
+//                Intent intent = new Intent(DashboardActivity.this, SplashscreenActivityQ.class);
                 startActivity(intent);
             }
 
@@ -137,11 +134,26 @@ import com.luseen.spacenavigation.SpaceOnClickListener;
 
 
 
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getApplication());
+        boolean isOn = sp.getBoolean("switch",false);
         Mprayergbtn= findViewById(R.id.Mprayergbtn);
         Mprayergbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openMalePrayerGuidanceActivity();
+
+                if (isOn){
+//                    editor.putBoolean("btn",isOn);
+//                    editor.apply();
+//                    sp.getBoolean("btn",isOn);
+                    openMalePrayerGuidanceActivity();
+                }else {
+//                    editor.putBoolean("btn",isOn);
+//                    editor.apply();
+//                    sp.getBoolean("btn",isOn);
+
+//                    Log.d("0099","btn " + editor.toString() + " " + isOn);
+                    openPrayerGuidanceActivity();
+                }
             }
         });
         prayergbtn= findViewById(R.id.prayergbtn);
@@ -216,23 +228,32 @@ import com.luseen.spacenavigation.SpaceOnClickListener;
         return false;
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.menu_main,menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        int id=item.getItemId();
-//        if(id==R.id.action_settings){
-//            Intent intent = new Intent(DashboardActivity.this,SettingsActivity.class);
-//            intent.putExtra("select","selected");
-//            startActivity(intent);
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main,menu);
+        return true;
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        if (sharedPreferences.getBoolean("switch",false)){
+
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id=item.getItemId();
+        if(id==R.id.action_settings){
+            Intent intent = new Intent(DashboardActivity.this, SettingsActivity.class);
+            intent.putExtra("select","selected");
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     private void openMalePrayerGuidanceActivity() {
         Intent intent = new Intent(this, MScrollableTabsActivity.class);

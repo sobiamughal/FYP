@@ -24,12 +24,18 @@
 
         <ImageButton
             android:id="@+id/mosques_nearby"
-            android:layout_width="wrap_content"
+            android:layout_width="91dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginLeft="200dp"
+            android:layout_marginStart="289dp"
+            android:layout_marginLeft="123dp"
+            android:layout_marginEnd="31dp"
+            android:layout_marginRight="31dp"
+            android:layout_marginBottom="99dp"
             android:onClick="onClick"
-            android:src="@drawable/ic_islamic_mosque" />
+            android:src="@drawable/mosqueicon" />
     </RelativeLayout>
 </RelativeLayout>

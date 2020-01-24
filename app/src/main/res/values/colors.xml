@@ -7,6 +7,18 @@
     <color name="lightgray">#ededed</color>
     <color name="Actionbar_color">#dfb96e</color>
     <color name="background">#EEEDEF</color>
+    <color name="hijri_date_picker_accent_color">#009688</color>
+    <color name="orange_light">#FB924C</color>
+    <color name="gray">#929292</color>
+    <color name="white">#FFFFFF</color>
+    <color name="light_gray">#B7B7B7</color>
+    <color name="layout_shadow_color">#F6F6F6</color>
+    <color name="black">@android:color/black</color>
+
+
+    <color name="transWhite">#b4fafafa</color>
+    <color name="ripple_dark">#33ffffff</color>
+    <color name="ripple_light">#1f000000</color>
 
     <color name="color1">#424549</color>
     <color name="color2">#7e455e</color>

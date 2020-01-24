@@ -1,10 +1,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="info.androidhive.sqlite.view.MainActivity">
+    tools:context=".prayertime.PrayerTimeActivity">
     <item
         android:id="@+id/action_pcalendar"
         android:orderInCategory="100"
         android:title="Prayer Timings Yearly"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/searchbtn"
+        android:icon="@drawable/search"
+        android:title="Search Location"
+        app:showAsAction="ifRoom"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
 </menu>

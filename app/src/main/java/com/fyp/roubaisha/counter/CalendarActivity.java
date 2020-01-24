@@ -1,24 +1,17 @@
 package com.fyp.roubaisha.counter;
 
-import android.content.Context;
-import android.graphics.Color;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+
 import android.os.Bundle;
-import android.widget.Toast;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
-import com.github.sundeepk.compactcalendarview.CompactCalendarView;
-import com.github.sundeepk.compactcalendarview.domain.Event;
+public class CalendarActivity extends AppCompatActivity implements MyCalendarView.OnDateSetListener {
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-
-public class CalendarActivity extends AppCompatActivity {
-
-    CompactCalendarView compactcalendar;
-    private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("DDDD YYYY", Locale.getDefault());
-
+    MyCalendarView myCalendarView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,29 +22,49 @@ public class CalendarActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle("Calendar");
 
-        compactcalendar = (CompactCalendarView) findViewById(R.id.compactcalendar_view);
-        compactcalendar.setUseThreeLetterAbbreviation(true);
-
-        //for an event
-        Event ev1 = new Event(Color.GREEN, 1551192067000L, "Meeting");
-        compactcalendar.addEvent(ev1);
-
-
-        compactcalendar.setListener(new CompactCalendarView.CompactCalendarViewListener() {
+        ((CardView) findViewById(R.id.button)).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onDayClick(Date dateClicked) {
-                Context context = getApplicationContext();
-                if (dateClicked.toString().compareTo("tue feb [0:0:21 GMT] 2019")== 0){
-                    Toast.makeText(context, "meeting", Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(context, "no event", Toast.LENGTH_SHORT).show();
-                }
-            }
+            public void onClick(View view) {
 
-            @Override
-            public void onMonthScroll(Date firstDayOfNewMonth) {
-                actionBar.setTitle(simpleDateFormat.format(firstDayOfNewMonth));
+                myCalendarView = MyCalendarView.getInstance(CalendarActivity.this,true);
+
+                myCalendarView.setOnDateSetListener(CalendarActivity.this);
+                myCalendarView.setMinMaxHijriYear(1430, 1450);
+                myCalendarView.setMinMaxGregorianYear(2013, 2020);
+                myCalendarView.setMode(MyCalendarView.Mode.Gregorian);
+                myCalendarView.setUILanguage(MyCalendarView.Language.English);
+//                myCalendarView.setDaysOfWeekTextColor(getResources().getColor(R.color.orange_light));
+//                myCalendarView.setDatePickerMonthlyDaysBckground(getResources().getColor(R.color.orange_light));
+//                        .setDefaultHijriDate(8, 0, 1437)//months start from 0
+                myCalendarView.setEnableScrolling(false);
+
+                myCalendarView.showDialog();
+
             }
         });
+        ((CardView) findViewById(R.id.button22)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                myCalendarView = MyCalendarView.getInstance(CalendarActivity.this,true);
+
+                myCalendarView.setOnDateSetListener(CalendarActivity.this);
+                myCalendarView.setMinMaxHijriYear(1430, 1450);
+                myCalendarView.setMinMaxGregorianYear(2013, 2020);
+                myCalendarView.setMode(MyCalendarView.Mode.Hijri);
+                myCalendarView.setUILanguage(MyCalendarView.Language.Arabic);
+//                        .setDefaultHijriDate(8, 0, 1437)//months start from 0
+                myCalendarView.setEnableScrolling(false);
+
+                myCalendarView.showDialog();
+
+            }
+        });
+    }
+
+    @Override
+    public void onDateSet(int year, int month, int day, int hour, int minute, int seconds, String ampm) {
+        ((TextView) findViewById(R.id.textView)).setText(day + "/" + (month) + "/" + year);
+        ((TextView) findViewById(R.id.TimetextView)).setText(hour + "-" + minute + "-" + ampm);
     }
 }

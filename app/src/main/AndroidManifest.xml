@@ -30,9 +30,7 @@
         </activity>
         <activity android:name=".Quran.presentation.listayat.ListAyatActivity"></activity>
 
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3155249097775684~8391295993"/>
+
         <activity android:name="com.fyp.roubaisha.counter.FuzulActivity"></activity>
         <activity android:name="com.fyp.roubaisha.counter.DashboardActivity" ></activity>
         <activity
@@ -100,9 +98,6 @@
         <activity android:name="com.fyp.roubaisha.counter.YesResponse" />
         <activity android:name="com.fyp.roubaisha.counter.NoResponse" />
         <activity android:name="com.fyp.roubaisha.counter.HomeActivity" />
-        <activity android:name="com.fyp.roubaisha.counter.Login_Signup.Login_MainActivity" />
-        <activity android:name="com.fyp.roubaisha.counter.Login_Signup.Login_form" />
-        <activity android:name="com.fyp.roubaisha.counter.Login_Signup.Signup_form" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -134,7 +129,7 @@
             android:parentActivityName="com.fyp.roubaisha.counter.HomeActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="com.fyp.roubaisha.counter.Map.MapsActivity"
-            android:parentActivityName="com.fyp.roubaisha.counter.MoreActivity" />
+            android:parentActivityName=".DashboardActivity" />
         <activity
             android:name="com.fyp.roubaisha.counter.prayertime.PrayerTimeActivity"
             android:parentActivityName="com.fyp.roubaisha.counter.MoreActivity" />
@@ -419,6 +414,7 @@
         <activity android:name="com.fyp.roubaisha.counter.PrayerTimeYearActivity"
     android:label="Prayer Timing Yearly"
     android:parentActivityName="com.fyp.roubaisha.counter.prayertime.PrayerTimeActivity" />
+        <activity android:name=".Settings.SettingsActivity" />
     </application>
 
 </manifest>
